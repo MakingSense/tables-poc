@@ -18,14 +18,20 @@ At the beginning we did not have pagination, so it was really important to make 
 
 It looks simple, but we still have some restrictions, so, we need to define how to deal with it, and how to mitigate edge cases.
 
-## TODO:
 
-* Documentation
-* simulate left nav bars (3 different bars)
+## Requirements
 
-## Adaptative columns behavior
+Basically the main requirement is to define way to configure tables easily and without too much fine tunning for particular cases. For that reason we decided to take advantage of automatic table layout features provided by all the browsers.
+
+We should take into account small screens (~1024px) in order to allow to use the system on them, but maybe with some little drawbacks if it is need.
+
+Eye movement could be also a problem, so it should be taken into account. So, it is possible that a large table on wide monitor o not fill all the space.
+
+
+## Proposed solution
 
 _I am working on this_
+
 
 ## Related readings
 
