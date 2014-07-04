@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Tables POC</title>
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/underscore.js"></script>
+    <script src="Scripts/knockout-2.3.0.js"></script>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Tables POC</h1>
+    <p>See details in <a href="README.html">README file</a>. View and fork <a href="https://github.com/MakingSense/tables-poc">source code</a> at GitHub.</p>
+    <div id="configuration">
+        <!-- TODO: make these divs floating and collapsible -->
+        <div data-bind="foreach: cfgList">
+            <p>
+                <!-- ko if: type == "checkbox" -->
+                <input type="checkbox" data-bind="checked: value, attr: { id: key }" />
+                <!-- /ko -->
+                <label data-bind="text: label, attr: { for: key }"></label>
+                <!-- ko if: type == "text" -->
+                <input type="text" data-bind="value: value, attr: { id: key }" />
+                <!-- /ko -->
+            </p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Label</th>
+                    <th>width</th>
+                    <th>max-width</th>
+                    <th>min-width</th>
+                    <th>example</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: colCfgList">
+                <tr>
+                    <th data-bind="text: key"></th>
+                    <td><input type="text" size="8" data-bind="value: label" /></td>
+                    <td><input type="text" size="8" data-bind="value: width" /></td>
+                    <td><input type="text" size="8" data-bind="value: maxWidth" /></td>
+                    <td><input type="text" size="8"  data-bind="value: minWidth" /></td>
+                    <td>
+                        <button type="button" data-bind="click: $root.exampleData.reset">R</button>
+                        <button type="button" data-bind="click: $root.exampleData.setL">L</button>
+                        <button type="button" data-bind="click: $root.exampleData.setXL">XL</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr />
+    <div id="page" data-bind="style: { maxWidth: cfg.pageMaxWidth, minWidth: cfg.pageMinWidth }, css: { 'show-nav-bars': cfg.showNavigationBars, 'collapsed-bar': cfg.collapsedNavigation, 'show-profile-nav': cfg.showProfileNav }">
+        <div>
+            <nav id="navigation">
+                <div>ORGANIZATIONS</div>
+                <div>USERS</div>
+                <div>DEVICES</div>
+            </nav>
+            <div class="go-back-nav">
+                <div>BACK</div>
+            </div>
+            <nav class="profile-nav">
+                <div>BASIC INFORMATION</div>
+                <div>LOCATIONS</div>
+            </nav>
+        </div>
+        <div id="table_container" data-bind="style: { maxWidth: cfg.tableContainerMaxWidth, minWidth: cfg.tableContainerMinWidth }">
+            <table data-bind="style: { width: cfg.tableWidth }, css: { 'ellipsis-for-long-words': cfg.ellipsisForLongWords }">
+                <thead>
+                    <tr data-bind="foreach: colCfgList">
+                        <th data-bind="style: { maxWidth: $root.cfg.maxHeaderWidth }, text: label"></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: locations">
+                    <tr data-bind="foreach: $root.colCfgList">
+                        <td data-bind="style: { maxWidth: maxWidth() || $root.cfg.maxColumnWidth(), minWidth: minWidth() || $root.cfg.minColumnWidth(), width: width() }, text: $parent[key]"></td>
+                    </tr>
+                    <!-- ko if: $root.cfg.editable -->
+                    <tr data-bind="foreach: $root.colCfgList">
+                        <td><input type="text" data-bind="value: $parent[key]"></td>
+                    </tr>
+                    <!-- /ko -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

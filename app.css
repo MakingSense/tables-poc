@@ -1,0 +1,87 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#navigation {
+    display: none;
+}
+
+.show-nav-bars #navigation {
+    width: 170px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    background: none repeat scroll 0 0 #70aed8;
+}
+
+.collapsed-bar #navigation {
+    width: 65px;
+}
+
+.go-back-nav {
+    display: none;
+}
+
+.show-nav-bars.collapsed-bar .go-back-nav {
+    display: block;
+    background: none repeat scroll 0 0 #5b8eb1;
+    float: left;
+    width: 65px;
+}
+
+.profile-nav  {
+    display: none;
+}
+
+.show-profile-nav .profile-nav {
+    display: block;
+    background: none repeat scroll 0 0 #f5f5f5;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 230px;
+}
+
+#table_container {
+    margin-left: 0;
+}
+
+.show-profile-nav #table_container {
+    margin-left: 230px;
+}
+
+.show-nav-bars #table_container {
+    margin-left: 170px;
+}
+
+.show-nav-bars.collapsed-bar #table_container {
+    margin-left: 130px;
+}
+
+.show-nav-bars.show-profile-nav #table_container {
+    margin-left: 400px;
+}
+
+.show-nav-bars.collapsed-bar.show-profile-nav #table_container {
+    margin-left: 360px;
+}
+
+th {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-for-long-words td {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
