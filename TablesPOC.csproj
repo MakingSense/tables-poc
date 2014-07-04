@@ -19,6 +19,7 @@
   <ItemGroup>
     <None Include="README.md" />
     <Content Include="app.css" />
+    <Content Include="images\current_problem.png" />
     <Content Include="index.html" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="README.html">
