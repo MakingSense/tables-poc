@@ -28,13 +28,8 @@
         </div>
         <table>
             <thead>
-                <tr>
-                    <th>Key</th>
-                    <th>Label</th>
-                    <th>width</th>
-                    <th>max-width</th>
-                    <th>min-width</th>
-                    <th>example</th>
+                <tr data-bind="foreach: colCfgList">
+                    <th data-bind="text: label"></th>
                 </tr>
             </thead>
             <tbody data-bind="foreach: colCfgList">
