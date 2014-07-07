@@ -17,6 +17,8 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="_layouts\default.html" />
+    <None Include="_config.yml" />
     <None Include="README.md" />
     <None Include="doc.md" />
     <Content Include="app.css" />

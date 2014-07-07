@@ -1,0 +1,7 @@
+﻿encoding : UTF-8
+safe: true
+lsi: false
+pygments: true
+markdown: kramdown
+kramdown:
+  input: GFM

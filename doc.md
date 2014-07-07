@@ -1,6 +1,12 @@
-﻿# Tables POC
+---
+layout: default
+title: Tables POC documentation
+---
 
-See [demo](http://makingsense.github.io/tables-poc/) and [source code](https://github.com/MakingSense/tables-poc).
+# Tables POC
+
+See [demo]({{ site.github.url }}) and [source code]({{ site.github.repository_url }}).
+
 
 ## Motivation
 
