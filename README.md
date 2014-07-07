@@ -30,7 +30,14 @@ Eye movement could be also a problem, so it should be taken into account. So, it
 
 ## Proposed solution
 
-_I am working on this_
+<!-- option 1: container max and min and table 100%, to fill the space -->
+<!-- option 2: table min and max, adapted to content -->
+
+
+## Notes
+
+1. We refused to set a minimum page size (See `Page min width` empty configuration), because the elements inside the page will constrain it. For example, if it is necessary to force the width of a form, it is a form constrain, not a page one.
+2. In the same way, it is not defined a maximum page size (See `Page max width` empty configuration), if we need to enforce a max width for an element in order to reduce eye movement, it is constrain of the element.
 
 
 ## Related readings
