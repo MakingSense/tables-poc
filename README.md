@@ -28,16 +28,27 @@ We should take into account small screens (~1024px) in order to allow to use the
 Eye movement could be also a problem, so it should be taken into account. So, it is possible that a large table on wide monitor o not fill all the space.
 
 
-## Proposed solution
+## Proposed solutions
 
-<!-- option 1: container max and min and table 100%, to fill the space -->
-<!-- option 2: table min and max, adapted to content -->
+The main proposal is to **allow the table to adapt the column widths to the content** `[S01]` and **define minimum and maximum widths for each column** `[S02]` in order to get a balanced table based on the expected contents besides exceptional cases. It is possible to **define standard classes for different kind of columns** `[S03]`.
+
+To avoid columns without width range, **default minimum and maximum widths will be defined values for all columns in general** `[S04]`.
+
+In big tables, the summatory of all maximum widths, could be greater than the available space, in that case the columns will be reduced to fit into available place. We want to also **limit the maximum table width** `[S05]` in order to reduce the eye movement for big tables in wide screens.
+
+If the screen available space is less than summatory of all minimum widths, inevitably there will be a scroll. So, it should be taken into account when it is defined what data will be shown in a table.
+
+The **words wider than the cell maximum width should be cropped and an ellipsis will be shown** `[S06]`, in that way will be avoid to show text outside the column.
+
+In order to deal gracefully with long text headers for narrow columns, **headers text should not broken into more than one line, should be cropped, an ellipsis will be shown, and the full text will be available as tooltip** `[S07]`.
 
 
 ## Notes
 
-1. We refused to set a minimum page size (See `Page min width` empty configuration), because the elements inside the page will constrain it. For example, if it is necessary to force the width of a form, it is a form constrain, not a page one.
-2. In the same way, it is not defined a maximum page size (See `Page max width` empty configuration), if we need to enforce a max width for an element in order to reduce eye movement, it is constrain of the element.
+1.  We refused to set a minimum page size `[N01]`, because the elements inside the page will constrain it. For example, if it is necessary to force the width of a form, it is a form constrain, not a page one.
+2.  In the same way, it is not defined a maximum page size `[N02]`, if we need to enforce a max width for an element in order to reduce eye movement, it is constrain of the element.
+3.  It is possible to force the table to fill all available space (up to table maximum width), in that case maximum column widths will be ignored `[N03]`. I am not sure if it is a good idea because it could give us problems with narrow content, we can try on Portal with current tables.
+
 
 
 ## Related readings
