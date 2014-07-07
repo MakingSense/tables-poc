@@ -49,6 +49,102 @@ In order to deal gracefully with long text headers for narrow columns, **headers
 2.  In the same way, it is not defined a maximum page size `[N02]`, if we need to enforce a max width for an element in order to reduce eye movement, it is constrain of the element.
 3.  It is possible to force the table to fill all available space (up to table maximum width), in that case maximum column widths will be ignored `[N03]`. I am not sure if it is a good idea because it could give us problems with narrow content, we can try on Portal with current tables.
 
+## Example implementation
+
+```html
+    <!-- ... -->
+    <div id="page">
+        <!-- ... -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <!-- [S07] Full text will be available as tool-tip -->
+                    <th title="Name">
+                        Name
+                    </th>
+                    <!-- ... -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- [S03] Define standard classes for different kind of columns -->
+                    <td class="col-name-long">
+
+                    </td>
+                    <!-- ... -->
+                </tr>
+            </tbody>
+        </table>
+        <!-- ... -->
+    </div>
+    <!-- ... -->
+```
+
+```css
+    #page { 
+        /* [N01] Set minimum page size not required */
+        /* min-width: /UNSET/; */ 
+
+        /* [N02] Maximum page size not required */
+        /* max-width: /UNSET/; */ 
+    }
+
+    .table {
+        /* [N03] Should we force to fill available space? */
+        /* width: 100%; */ 
+
+        /* [S01] Adapt column widths to content (Not required because it is the default value) */
+        table-layout: auto; 
+
+        /* [S05] Limit the maximum table width */
+        max-width: 1500px; 
+    }
+
+    .table td {
+        /* [S04] Default minimum and maximum widths */
+        min-width: 20px;
+        max-width: 500px;
+
+        /* [S06] Words wider than the cell maximum width should be cropped and an ellipsis will be shown */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .table th {
+        /* [S07] Text should not broken into more than one line */
+        white-space: nowrap;
+        word-wrap: break-word;
+    
+
+        /* [S07] Should be cropped*/
+        overflow: hidden;
+
+        /* [S07] Ellipsis will be shown */
+        text-overflow: ellipsis;
+    }
+
+    /* [S02] Define minimum and maximum widths for each column */
+    /* [S03] Define standard classes for different kind of columns */
+    .table td.col-name-long {
+        min-width: 300px;
+        max-width: 600px;
+    }
+    .table td.col-name-short,
+    .table td.col-city-name,
+    .table td.col-state-name {
+        min-width: 100px;
+        max-width: 400px;
+    }
+    .table td.col-number-small {
+        min-width: 40px;
+        max-width: 40px;
+    }
+    .table td.col-date {
+        min-width: 250px;
+        max-width: 250px;
+    }
+```
 
 
 ## Related readings
