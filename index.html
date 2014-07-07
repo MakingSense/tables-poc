@@ -68,7 +68,7 @@
             <table data-bind="style: { width: cfg.tableWidth, maxWidth: cfg.tableMaxWidth, minWidth: cfg.tableMinWidth,  }, css: { 'ellipsis-for-long-words': cfg.ellipsisForLongWords }">
                 <thead>
                     <tr data-bind="foreach: colCfgList">
-                        <th data-bind="style: { maxWidth: $root.cfg.maxHeaderWidth }, text: label"></th>
+                        <th data-bind="style: { maxWidth: $root.cfg.maxHeaderWidth }, text: label, attr: { title: label }"></th>
                     </tr>
                 </thead>
                 <tbody data-bind="foreach: locations">
