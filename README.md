@@ -56,3 +56,5 @@ In order to deal gracefully with long text headers for narrow columns, **headers
 * [Tables (W3C recommendation)](http://www.w3.org/TR/CSS21/tables.html)
 * [What is the behavior when sum of widths of columns != table width?](http://stackoverflow.com/questions/8251517/what-is-the-behavior-when-sum-of-widths-of-columns-table-width)
 * [A Complete Guide to the Table Element](http://css-tricks.com/complete-guide-table-element/)
+* [Fixed Table Layouts](http://css-tricks.com/fixing-tables-long-strings/#cp_embed_lAqrG) (A different approach)
+
