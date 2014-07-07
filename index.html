@@ -70,7 +70,7 @@
             </nav>
         </div>
         <div id="table_container" data-bind="style: { maxWidth: cfg.tableContainerMaxWidth, minWidth: cfg.tableContainerMinWidth }">
-            <table data-bind="style: { width: cfg.tableWidth }, css: { 'ellipsis-for-long-words': cfg.ellipsisForLongWords }">
+            <table data-bind="style: { width: cfg.tableWidth, maxWidth: cfg.tableMaxWidth, minWidth: cfg.tableMinWidth,  }, css: { 'ellipsis-for-long-words': cfg.ellipsisForLongWords }">
                 <thead>
                     <tr data-bind="foreach: colCfgList">
                         <th data-bind="style: { maxWidth: $root.cfg.maxHeaderWidth }, text: label"></th>

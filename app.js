@@ -702,13 +702,13 @@ var tablesPoc;
                 {
                     key: "pageMinWidth",
                     label: "Page min width",
-                    value: ko.observable("650px"),
+                    value: ko.observable(""),
                     type: "text"
                 },
                 {
                     key: "tableContainerMaxWidth",
                     label: "Table container max width",
-                    value: ko.observable("1200px"),
+                    value: ko.observable(""),
                     type: "text"
                 },
                 {
@@ -720,7 +720,19 @@ var tablesPoc;
                 {
                     key: "tableWidth",
                     label: "Table width",
-                    value: ko.observable("100%"),
+                    value: ko.observable(""),
+                    type: "text"
+                },
+                {
+                    key: "tableMaxWidth",
+                    label: "Table container max width",
+                    value: ko.observable("1200px"),
+                    type: "text"
+                },
+                {
+                    key: "tableMinWidth",
+                    label: "Table container min width",
+                    value: ko.observable("600px"),
                     type: "text"
                 },
                 {
