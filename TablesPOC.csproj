@@ -18,6 +18,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="README.md" />
+    <None Include="doc.md" />
     <Content Include="app.css" />
     <Content Include="images\current_problem.png" />
     <Content Include="index.html" />
